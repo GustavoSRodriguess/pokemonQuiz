@@ -47,7 +47,7 @@ class _GameState extends State<Game> {
       print('Resposta incorreta!');
     }
     tentativas++;
-    if (tentativas < 4) {
+    if (tentativas < 10) {
       _gerarNovoPokemon();
     } else {
       print('Fim do jogo. Acertos: $acertos');
@@ -59,7 +59,7 @@ class _GameState extends State<Game> {
 
   void _gerarNovoPokemon() {
     setState(() {
-      if (tentativas < 4) {
+      if (tentativas < 10) {
         pokemonCerto = Random().nextInt(149);
         _gerarOpcoes();
       } else {
