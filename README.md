@@ -1,5 +1,7 @@
 # pokemon_quiz
 
+Trabalho feito por Gustavo Schneider Rodrigues e Pedro Henrique Dias da Costa
+
 A new Flutter project.
 
 ## Getting Started
