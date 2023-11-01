@@ -1,5 +1,8 @@
 extension StringExtension on String {
-  String capitalize() {
-    return '${this[0].toUpperCase}${substring(1)}';
+  String capitalizeFirstLetter() {
+    if (isEmpty) {
+      return this;
+    }
+    return this[0].toUpperCase() + substring(1);
   }
 }

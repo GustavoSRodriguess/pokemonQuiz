@@ -7,7 +7,7 @@ import 'package:pokemon_quiz/screens/game_over_screen.dart';
 class Game extends StatefulWidget {
   final List<Pokemon> pokemonList;
 
-  Game({required this.pokemonList, Key? key}) : super(key: key);
+  const Game({required this.pokemonList, Key? key}) : super(key: key);
 
   @override
   State<Game> createState() => _GameState();
@@ -41,18 +41,15 @@ class _GameState extends State<Game> {
 
   void verificarResposta(String opcaoEscolhida) {
     if (opcaoEscolhida == widget.pokemonList[pokemonCerto].name) {
-      // Resposta correta, faça algo aqui
       print('Resposta correta!');
       acertos++;
     } else {
-      // Resposta incorreta, faça algo aqui
       print('Resposta incorreta!');
     }
     tentativas++;
     if (tentativas < 4) {
       _gerarNovoPokemon();
     } else {
-      // O jogo termina após 4 tentativas
       print('Fim do jogo. Acertos: $acertos');
       setState(() {
         jogoTerminou = true;
@@ -66,7 +63,6 @@ class _GameState extends State<Game> {
         pokemonCerto = Random().nextInt(149);
         _gerarOpcoes();
       } else {
-        // O jogo termina após 4 tentativas
         setState(() {
           jogoTerminou = true;
         });
@@ -114,14 +110,19 @@ class _GameState extends State<Game> {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    verificarResposta(opcoes[0]);
+                    verificarResposta((opcoes[0]));
                   },
+                  style:
+                      ElevatedButton.styleFrom(fixedSize: const Size(150, 50)),
                   child: Text(opcoes[0]),
                 ),
+                const SizedBox(height: 64),
                 ElevatedButton(
                   onPressed: () {
                     verificarResposta(opcoes[1]);
                   },
+                  style:
+                      ElevatedButton.styleFrom(fixedSize: const Size(150, 50)),
                   child: Text(opcoes[1]),
                 ),
               ],
@@ -133,12 +134,17 @@ class _GameState extends State<Game> {
                   onPressed: () {
                     verificarResposta(opcoes[2]);
                   },
+                  style:
+                      ElevatedButton.styleFrom(fixedSize: const Size(150, 50)),
                   child: Text(opcoes[2]),
                 ),
+                const SizedBox(height: 64),
                 ElevatedButton(
                   onPressed: () {
                     verificarResposta(opcoes[3]);
                   },
+                  style:
+                      ElevatedButton.styleFrom(fixedSize: const Size(150, 50)),
                   child: Text(opcoes[3]),
                 ),
               ],
@@ -151,15 +157,15 @@ class _GameState extends State<Game> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text('Acertos: $acertos'),
-              SizedBox(width: 20),
+              const SizedBox(width: 20),
               Image.asset(
                 'assets/correct.png', // Substitua 'assets' pelo caminho correto
                 width: 32,
                 height: 32,
               ),
-              SizedBox(width: 20),
+              const SizedBox(width: 20),
               Text('Erros: ${tentativas - acertos}'),
-              SizedBox(width: 20),
+              const SizedBox(width: 20),
               Image.asset(
                 'assets/wrong.png', // Substitua 'assets' pelo caminho correto
                 width: 32,
