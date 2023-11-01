@@ -160,16 +160,16 @@ class _GameState extends State<Game> {
               const SizedBox(width: 20),
               Image.asset(
                 'assets/correct.png', // Substitua 'assets' pelo caminho correto
-                width: 32,
-                height: 32,
+                width: 64,
+                height: 64,
               ),
               const SizedBox(width: 20),
               Text('Erros: ${tentativas - acertos}'),
               const SizedBox(width: 20),
               Image.asset(
                 'assets/wrong.png', // Substitua 'assets' pelo caminho correto
-                width: 32,
-                height: 32,
+                width: 64,
+                height: 64,
               ),
             ],
           ),
