@@ -13,7 +13,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       title: 'Pokemon Quiz',
       theme: ThemeData(primarySwatch: Colors.red),
-      routes: {'/': (context) => const quizPokemon()},
+      routes: {'/': (context) => const QuizPokemon()},
       initialRoute: '/',
     );
   }
